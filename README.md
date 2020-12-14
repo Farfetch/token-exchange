@@ -47,12 +47,12 @@ The TokenExchange Framework provides a set of configurations that can be defined
 - ActorClaimsBlacklist: Sets a blacklist of claims that if they are found in the Actor Token the token will not be accepted;
 - SubjectClaimsToExclude: Sets a list of claims that will be excluded from the resulting token of the exchange;
 
-```
+```csharp
 var tokenExchangeOptions = new TokenExchangeOptions
             {
-                ActorClaimsToInclude = new List<string> {TokenExchangeConstants.ClaimTypes.TenantId},
-                ActorClaimsBlacklist = new List<string> {JwtClaimTypes.Subject},
-                SubjectClaimsToExclude = new List<string> {JwtClaimTypes.AuthenticationMethod}
+                ActorClaimsToInclude = new List<string> { TokenExchangeConstants.ClaimTypes.TenantId },
+                ActorClaimsBlacklist = new List<string> { JwtClaimTypes.Subject },
+                SubjectClaimsToExclude = new List<string> { JwtClaimTypes.AuthenticationMethod }
             };
 	...
 	...
