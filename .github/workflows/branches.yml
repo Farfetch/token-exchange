@@ -1,0 +1,25 @@
+name: Build Branch
+
+on:
+  push:
+    branches:    
+      - '**'
+      - '!master'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '2.1'
+    - name: Install dependencies
+      run: dotnet restore ./IdentityServer4.Contrib.TokenExchange.sln
+    - name: Build
+      run: dotnet pack ./IdentityServer4.Contrib.TokenExchange.sln -c Release /p:VersionPrefix="1.0" -o ./drop --include-source --include-symbols
+    - name: Test
+      run: dotnet test tests/IdentityServer4.Contrib.TokenExchange.Tests/IdentityServer4.Contrib.TokenExchange.Tests.csproj -c Release --no-restore --verbosity normal
