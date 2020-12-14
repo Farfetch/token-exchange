@@ -23,5 +23,5 @@ jobs:
       run: dotnet pack ./IdentityServer4.Contrib.TokenExchange.sln -c Release /p:VersionPrefix="1.0" -o ./drop --include-source --include-symbols
     - name: Test
       run: dotnet test tests/IdentityServer4.Contrib.TokenExchange.Tests/IdentityServer4.Contrib.TokenExchange.Tests.csproj -c Release --no-restore --verbosity normal
-    - name: push to nuget
-      run: dotnet nuget push ./drop/*.nupkg -k ${{ secrets.nuget_secret }} -s https://api.nuget.org/v3/index.json --skip-duplicate
+    # - name: push to nuget
+    #   run: dotnet nuget push ./drop/*.nupkg -k ${{ secrets.nuget_secret }} -s https://api.nuget.org/v3/index.json --skip-duplicate
