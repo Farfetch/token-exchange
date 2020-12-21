@@ -3,7 +3,7 @@
 This framework extends Identity Server capabilities by implementing support for Token Exchange following the specifications defined in the [RFC 8693 - OAuth 2.0 Token Exchange](https://www.rfc-editor.org/rfc/rfc8693.html).
 
 ## Features
-Currenlty, only a partial implementation of the RFC is available with focus on the security token delegation:
+Currently, only a partial implementation of the RFC is available with focus on the security token delegation:
 #### <i></i> Supported
  - Token Exchange Delegation semantics;
  - [Supported request parameters](https://tools.ietf.org/html/rfc8693#section-2.1): subject_token, actor_token, subject_token_type, actor_token_type; 
@@ -11,11 +11,11 @@ Currenlty, only a partial implementation of the RFC is available with focus on t
 
 #### <i></i> Not Supported
 - Token Exchange Impersonation semantics;
-- 'requested_token_type' is not supported and therefore ignored
-- 'may_act' claim is not supported
+- `requested_token_type` is not supported and therefore ignored
+- `may_act` claim is not supported
 
 #### <i></i> Extensions to the RFC
-- 'client_act' claim: The prefix 'client_' is added to the 'act' claim in the response when a delegation is performed and the subject token only contains client details and no subject. This prefix is only added if your IdentityServer is configured to add the prefix "client_" to the Client claim. 
+- `client_act` claim: The prefix `client_` is added to the `act` claim in the response when a delegation is performed and the subject token only contains client details and no subject. This prefix is only added if your IdentityServer is configured to add the prefix "client_" to the Client claim. 
 
 
 ## Naming Conventions
