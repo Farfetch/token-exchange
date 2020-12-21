@@ -1,3 +1,5 @@
+![Build Master](https://github.com/Farfetch/Token-Exchange/workflows/Build%20Master/badge.svg?branch=master)
+
 # Token Exchange
 
 This framework extends Identity Server capabilities by implementing support for Token Exchange following the specifications defined in the [RFC 8693 - OAuth 2.0 Token Exchange](https://www.rfc-editor.org/rfc/rfc8693.html).
