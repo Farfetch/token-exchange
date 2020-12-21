@@ -1,10 +1,10 @@
-name: Build Branch
+name: Build
 
 on:
+  pull_request:
+  
   push:
-    branches:    
-      - '**'
-      - '!master'
+    branches: [ master ]
 
 jobs:
   build:
@@ -13,13 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '2.1'
+
     - name: Install dependencies
       run: dotnet restore ./IdentityServer4.Contrib.TokenExchange.sln
+      
     - name: Build
-      run: dotnet pack ./IdentityServer4.Contrib.TokenExchange.sln -c Release /p:VersionPrefix="1.0" -o ./drop --include-source --include-symbols
+      run: dotnet build ./IdentityServer4.Contrib.TokenExchange.sln -c Release
+      
     - name: Test
       run: dotnet test tests/IdentityServer4.Contrib.TokenExchange.Tests/IdentityServer4.Contrib.TokenExchange.Tests.csproj -c Release --no-restore --verbosity normal
