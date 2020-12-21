@@ -6,7 +6,7 @@ This framework extends Identity Server capabilities by implementing support for 
 Currenlty, only a partial implementation of the RFC is available with focus on the security token delegation:
 #### <i></i> Supported
  - Token Exchange Delegation semantics;
- - Supported request parameters: subject_token, actor_token, subject_token_type, actor_token_type; 
+ - [Supported request parameters](https://tools.ietf.org/html/rfc8693#section-2.1): subject_token, actor_token, subject_token_type, actor_token_type; 
     - subject_token_type and actor token types are limited to urn:ietf:params:oauth:token-type:access_token;
 
 #### <i></i> Not Supported
