@@ -14,16 +14,16 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '2.1'
+        dotnet-version: '6.0.0'
 
     - name: Install dependencies
-      run: dotnet restore ./IdentityServer4.Contrib.TokenExchange.sln
+      run: dotnet restore ./Duende.IdentityServer.Contrib.TokenExchange.sln
     
     - name: Test
-      run: dotnet test tests/IdentityServer4.Contrib.TokenExchange.Tests/IdentityServer4.Contrib.TokenExchange.Tests.csproj -c Release --no-restore --verbosity normal
+      run: dotnet test tests/Duende.IdentityServer.Contrib.TokenExchange.Tests/Duende.IdentityServer.Contrib.TokenExchange.Tests.csproj -c Release --no-restore --verbosity normal
 
     - name: Pack
-      run: dotnet pack ./IdentityServer4.Contrib.TokenExchange.sln -c Release /p:Version=${{ github.event.release.tag_name }} -o ./drop
+      run: dotnet pack ./Duende.IdentityServer.Contrib.TokenExchange.sln -c Release /p:Version=${{ github.event.release.tag_name }} -o ./drop
 
 
     - name: Publish
