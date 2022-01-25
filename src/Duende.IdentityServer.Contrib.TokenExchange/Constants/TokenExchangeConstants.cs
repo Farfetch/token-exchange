@@ -1,4 +1,4 @@
-﻿namespace IdentityServer4.Contrib.TokenExchange.Constants
+﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Constants
 {
     public static class TokenExchangeConstants
     {

@@ -1,10 +1,10 @@
-﻿namespace IdentityServer4.Contrib.TokenExchange.Config
+﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Config
 {
     using System.Collections.Generic;
 
     using IdentityModel;
 
-    using IdentityServer4.Contrib.TokenExchange.Constants;
+    using Duende.IdentityServer.Contrib.TokenExchange.Constants;
 
     public class TokenExchangeOptions
     {

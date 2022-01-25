@@ -2,7 +2,7 @@
 
 # Token Exchange
 
-This framework extends Identity Server capabilities by implementing support for Token Exchange following the specifications defined in the [RFC 8693 - OAuth 2.0 Token Exchange](https://www.rfc-editor.org/rfc/rfc8693.html).
+This framework extends Duende Identity Server capabilities by implementing support for Token Exchange following the specifications defined in the [RFC 8693 - OAuth 2.0 Token Exchange](https://www.rfc-editor.org/rfc/rfc8693.html).
 
 ## Features
 Currently, only a partial implementation of the RFC is available with focus on the security token delegation:
@@ -20,17 +20,13 @@ Currently, only a partial implementation of the RFC is available with focus on t
 - `client_act` claim: The prefix `client_` is added to the `act` claim in the response when a delegation is performed and the subject token only contains client details and no subject. This prefix is only added if your IdentityServer is configured to add the prefix "client_" to the Client claim. 
 
 
-## Naming Conventions
--------------
-This framework is designed taking into consideration [IdentityServer 4 contribution guilines](https://identityserver4.readthedocs.io/en/latest/intro/contributing.html) therefore the project and namespaces follow the pattern `IdentityServer4.Contrib.TokenExchange`.
-
 ## Usage
 -------------
 
 #### <i></i> Prerequisites
-This framework consists of a nuget package designed to be installed and used together with an authentication server using [Identity Server 4](https://github.com/IdentityServer/IdentityServer4).
+This framework consists of a nuget package designed to be installed and used together with an authentication server using [Duende Identity Server](https://github.com/DuendeSoftware/IdentityServer).
 
-- It requires an authentication server built with Identity Server 4 >= 2.5.4
+- It requires an authentication server built with Duende Identity Server >= 6.0.0
 
 #### <i></i> Installing
 
@@ -38,7 +34,7 @@ For you to able to start using the Token Exchange framework, you first need to i
 You can do it via NuGet Package Manager via the interface or the console.
 
 ```
-PM> Install-Package IdentityServer4.Contrib.TokenExchange
+PM> Install-Package Duende.IdentityServer.Contrib.TokenExchange
 ```
 
 #### <i></i> Configuration
@@ -70,7 +66,7 @@ To build a package of Token Exchange framework locally, you can use the followin
 dotnet build
 dotnet pack
 ```
-After the execution of the commands above a new package will be created at `src\IdentityServer4.Contrib.TokenExchange\bin\Debug\IdentityServer4.Contrib.TokenExchange.1.0.0.nupkg`
+After the execution of the commands above a new package will be created at `src\Duende.IdentityServer.Contrib.TokenExchange\bin\Debug\Duende.IdentityServer.Contrib.TokenExchange.1.0.0.nupkg`
 
 #### Testing locally
 
@@ -84,7 +80,7 @@ Built with
 -------------
 
 - [Dotnet Core](https://dotnet.microsoft.com/download#/current) 
-- [IdentityServer4](https://github.com/IdentityServer/IdentityServer4)
+- [Duende Identity Server](https://github.com/DuendeSoftware/IdentityServer)
 
 Restrictions and Cautions
 -------------

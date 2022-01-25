@@ -1,4 +1,4 @@
-namespace IdentityServer4.Contrib.TokenExchange.Tests.Builder
+namespace Duende.IdentityServer.Contrib.TokenExchange.Tests.Builder
 {
     using System;
     using System.Collections.Generic;
@@ -7,14 +7,14 @@ namespace IdentityServer4.Contrib.TokenExchange.Tests.Builder
 
     using IdentityModel;
 
-    using IdentityServer4.Contrib.TokenExchange.Builders;
-    using IdentityServer4.Contrib.TokenExchange.Config;
-    using IdentityServer4.Contrib.TokenExchange.Constants;
-    using IdentityServer4.Contrib.TokenExchange.Extensions;
-    using IdentityServer4.Contrib.TokenExchange.Tests.Extensions;
-    using IdentityServer4.Extensions;
-    using IdentityServer4.Models;
-    using IdentityServer4.Validation;
+    using Duende.IdentityServer.Contrib.TokenExchange.Builders;
+    using Duende.IdentityServer.Contrib.TokenExchange.Config;
+    using Duende.IdentityServer.Contrib.TokenExchange.Constants;
+    using Duende.IdentityServer.Contrib.TokenExchange.Extensions;
+    using Duende.IdentityServer.Contrib.TokenExchange.Tests.Extensions;
+    using Duende.IdentityServer.Extensions;
+    using Duende.IdentityServer.Models;
+    using Duende.IdentityServer.Validation;
 
     using Microsoft.Extensions.Logging;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -346,7 +346,7 @@ namespace IdentityServer4.Contrib.TokenExchange.Tests.Builder
                 Client = new Client
                 {
                     ClientId = "client_id_from_subject",
-                    Claims = new List<Claim> { new Claim("a", "a1"), new Claim("b", "b1") }
+                    Claims = new List<ClientClaim> { new("a", "a1"), new("b", "b1") }
                 },
                 Claims = new List<Claim> { new Claim(JwtClaimTypes.Subject, "subSubject"), new Claim("tenantId", "2") }
             };

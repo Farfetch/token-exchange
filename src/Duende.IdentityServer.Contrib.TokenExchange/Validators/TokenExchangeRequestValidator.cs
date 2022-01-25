@@ -1,18 +1,18 @@
-﻿namespace IdentityServer4.Contrib.TokenExchange.Validators
+﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Validators
 {
     using System.Linq;
     using System.Threading.Tasks;
 
     using IdentityModel;
 
-    using IdentityServer4.Contrib.TokenExchange.Config;
-    using IdentityServer4.Contrib.TokenExchange.Interfaces;
-    using IdentityServer4.Contrib.TokenExchange.Models;
-    using IdentityServer4.Validation;
+    using Duende.IdentityServer.Contrib.TokenExchange.Config;
+    using Duende.IdentityServer.Contrib.TokenExchange.Interfaces;
+    using Duende.IdentityServer.Contrib.TokenExchange.Models;
+    using Duende.IdentityServer.Validation;
 
     using Microsoft.Extensions.Logging;
 
-    using static IdentityServer4.Contrib.TokenExchange.Constants.TokenExchangeConstants;
+    using static Duende.IdentityServer.Contrib.TokenExchange.Constants.TokenExchangeConstants;
 
     public class TokenExchangeRequestValidator : ITokenExchangeRequestValidator
     {
