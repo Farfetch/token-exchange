@@ -1,4 +1,4 @@
-﻿namespace IdentityServer4.Contrib.TokenExchange.Tests.Extensions
+﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Tests.Extensions
 {
     using System;
 
@@ -34,9 +34,9 @@
                 l => l.Log(
                     level,
                     It.IsAny<EventId>(),
-                    It.Is<object>(o => o.ToString() == message),
+                    It.Is<It.IsAnyType>((o, _) => o.ToString() == message),
                     null,
-                    It.IsAny<Func<object, Exception, string>>()),
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
                 times,
                 failMessage);
         }

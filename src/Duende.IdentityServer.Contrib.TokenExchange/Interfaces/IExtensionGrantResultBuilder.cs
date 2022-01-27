@@ -1,8 +1,8 @@
-﻿namespace IdentityServer4.Contrib.TokenExchange.Interfaces
+﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Interfaces
 {
-    using IdentityServer4.Contrib.TokenExchange.Models;
-    using IdentityServer4.Models;
-    using IdentityServer4.Validation;
+    using Duende.IdentityServer.Contrib.TokenExchange.Models;
+    using Duende.IdentityServer.Models;
+    using Duende.IdentityServer.Validation;
 
     public interface IExtensionGrantResultBuilder
     {

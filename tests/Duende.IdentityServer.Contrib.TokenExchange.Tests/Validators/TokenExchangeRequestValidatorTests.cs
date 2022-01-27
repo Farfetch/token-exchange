@@ -1,23 +1,23 @@
-﻿namespace IdentityServer4.Contrib.TokenExchange.Tests.Validators
+﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Tests.Validators
 {
     using System.Collections.Generic;
     using System.Collections.Specialized;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
-    using IdentityServer4.Contrib.TokenExchange.Config;
-    using IdentityServer4.Contrib.TokenExchange.Constants;
-    using IdentityServer4.Contrib.TokenExchange.Tests.Extensions;
-    using IdentityServer4.Contrib.TokenExchange.Validators;
-    using IdentityServer4.Models;
-    using IdentityServer4.Validation;
+    using Duende.IdentityServer.Contrib.TokenExchange.Config;
+    using Duende.IdentityServer.Contrib.TokenExchange.Constants;
+    using Duende.IdentityServer.Contrib.TokenExchange.Tests.Extensions;
+    using Duende.IdentityServer.Contrib.TokenExchange.Validators;
+    using Duende.IdentityServer.Models;
+    using Duende.IdentityServer.Validation;
 
     using Microsoft.Extensions.Logging;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     using Moq;
 
-    using static IdentityServer4.Contrib.TokenExchange.Constants.TokenExchangeConstants;
+    using static Duende.IdentityServer.Contrib.TokenExchange.Constants.TokenExchangeConstants;
 
     [TestClass]
     public class TokenExchangeRequestValidatorTests

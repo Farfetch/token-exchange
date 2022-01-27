@@ -1,4 +1,4 @@
-namespace IdentityServer4.Contrib.TokenExchange.Tests
+namespace Duende.IdentityServer.Contrib.TokenExchange.Tests
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -7,13 +7,13 @@ namespace IdentityServer4.Contrib.TokenExchange.Tests
 
     using IdentityModel;
 
-    using IdentityServer4.Contrib.TokenExchange.Builders;
-    using IdentityServer4.Contrib.TokenExchange.Config;
-    using IdentityServer4.Contrib.TokenExchange.Extensions;
-    using IdentityServer4.Contrib.TokenExchange.Interfaces;
-    using IdentityServer4.Contrib.TokenExchange.Models;
-    using IdentityServer4.Models;
-    using IdentityServer4.Validation;
+    using Duende.IdentityServer.Contrib.TokenExchange.Builders;
+    using Duende.IdentityServer.Contrib.TokenExchange.Config;
+    using Duende.IdentityServer.Contrib.TokenExchange.Extensions;
+    using Duende.IdentityServer.Contrib.TokenExchange.Interfaces;
+    using Duende.IdentityServer.Contrib.TokenExchange.Models;
+    using Duende.IdentityServer.Models;
+    using Duende.IdentityServer.Validation;
 
     using Microsoft.Extensions.Logging;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -104,9 +104,9 @@ namespace IdentityServer4.Contrib.TokenExchange.Tests
                     Client = new Client
                     {
                         ClientId = "SubjectDummyClientId",
-                        Claims = new List<Claim>
+                        Claims = new List<ClientClaim>
                         {
-                            new Claim("client_custom_type", "customValueFromSubject")
+                            new ClientClaim("client_custom_type", "customValueFromSubject")
                         }
                     },
                     Claims = new List<Claim>

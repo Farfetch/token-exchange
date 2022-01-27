@@ -1,4 +1,4 @@
-﻿namespace IdentityServer4.Contrib.TokenExchange.Builders
+﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Builders
 {
     using System;
     using System.Collections.Generic;
@@ -7,13 +7,13 @@
 
     using IdentityModel;
 
-    using IdentityServer4.Contrib.TokenExchange.Config;
-    using IdentityServer4.Contrib.TokenExchange.Constants;
-    using IdentityServer4.Contrib.TokenExchange.Extensions;
-    using IdentityServer4.Contrib.TokenExchange.Interfaces;
-    using IdentityServer4.Contrib.TokenExchange.Models;
-    using IdentityServer4.Models;
-    using IdentityServer4.Validation;
+    using Duende.IdentityServer.Contrib.TokenExchange.Config;
+    using Duende.IdentityServer.Contrib.TokenExchange.Constants;
+    using Duende.IdentityServer.Contrib.TokenExchange.Extensions;
+    using Duende.IdentityServer.Contrib.TokenExchange.Interfaces;
+    using Duende.IdentityServer.Contrib.TokenExchange.Models;
+    using Duende.IdentityServer.Models;
+    using Duende.IdentityServer.Validation;
 
     using Microsoft.Extensions.Logging;
 
@@ -59,7 +59,8 @@
 
                 if (this.IsClientToClientDelegation)
                 {
-                    this.subjectClient.Claims.Add(act);
+                    var actClientClaim = new ClientClaim(act.Type, act.Value, act.ValueType);
+                    this.subjectClient.Claims.Add(actClientClaim);
                     return new TokenExchangeGrantResult(this.subjectClient);
                 }
 

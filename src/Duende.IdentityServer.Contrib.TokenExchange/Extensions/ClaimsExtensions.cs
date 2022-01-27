@@ -1,4 +1,4 @@
-﻿namespace IdentityServer4.Contrib.TokenExchange.Extensions
+﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Extensions
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -6,7 +6,7 @@
 
     using IdentityModel;
 
-    using IdentityServer4.Contrib.TokenExchange.Constants;
+    using Duende.IdentityServer.Contrib.TokenExchange.Constants;
 
     public static class ClaimsExtensions
     {

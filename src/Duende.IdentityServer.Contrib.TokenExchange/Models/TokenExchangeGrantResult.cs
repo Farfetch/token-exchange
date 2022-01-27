@@ -1,11 +1,11 @@
-﻿namespace IdentityServer4.Contrib.TokenExchange.Models
+﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Models
 {
     using System.Collections.Generic;
     using System.Security.Claims;
 
-    using IdentityServer4.Contrib.TokenExchange.Constants;
-    using IdentityServer4.Models;
-    using IdentityServer4.Validation;
+    using Duende.IdentityServer.Contrib.TokenExchange.Constants;
+    using Duende.IdentityServer.Models;
+    using Duende.IdentityServer.Validation;
 
     public class TokenExchangeGrantResult : GrantValidationResult
     {

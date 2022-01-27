@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>Duende.IdentityServer.Contrib.TokenExchange</AssemblyName>
+    <RootNamespace>Duende.IdentityServer.Contrib.TokenExchange</RootNamespace>
+    <PackageId>Duende.IdentityServer.Contrib.TokenExchange</PackageId>
+    <Authors>Farfetch</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>Extends Duende Identity Server capabilities by implementing support for Token Exchange following the specifications defined in the RFC 8693 - OAuth 2.0 Token Exchange - https://www.rfc-editor.org/rfc/rfc8693.html.</Description>
+    <Authors>Farfetch</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Duende.IdentityServer" Version="6.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+</Project>

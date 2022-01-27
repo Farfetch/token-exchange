@@ -1,10 +1,10 @@
-﻿namespace IdentityServer4.Contrib.TokenExchange
+﻿namespace Duende.IdentityServer.Contrib.TokenExchange
 {
     using System.Threading.Tasks;
 
-    using IdentityServer4.Contrib.TokenExchange.Constants;
-    using IdentityServer4.Contrib.TokenExchange.Interfaces;
-    using IdentityServer4.Validation;
+    using Duende.IdentityServer.Contrib.TokenExchange.Constants;
+    using Duende.IdentityServer.Contrib.TokenExchange.Interfaces;
+    using Duende.IdentityServer.Validation;
 
     public class TokenExchangeGrant : IExtensionGrantValidator
     {
