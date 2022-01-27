@@ -27,7 +27,7 @@ jobs:
 
 
     - name: Publish
-      run: dotnet nuget push ./src/**/drop/*.nupkg -k ${{ secrets.NUGET_PUBLISH_KEY }} -s https://api.nuget.org/v3/index.json
+      run: dotnet nuget push ./drop/**/*.nupkg -k ${{ secrets.NUGET_PUBLISH_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
 
     - name: Print Version
       run: echo ${{ github.event.release.tag_name }}
