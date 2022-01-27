@@ -106,12 +106,12 @@ namespace Duende.IdentityServer.Contrib.TokenExchange.Tests
                         ClientId = "SubjectDummyClientId",
                         Claims = new List<ClientClaim>
                         {
-                            new ("client_custom_type", "customValueFromSubject")
+                            new ClientClaim("client_custom_type", "customValueFromSubject")
                         }
                     },
                     Claims = new List<Claim>
                     {
-                        new (JwtClaimTypes.Subject, "dummySub")
+                        new Claim(JwtClaimTypes.Subject, "dummySub")
                     }
                 },
                 ActorTokenValidationResult = new TokenValidationResult

@@ -34,7 +34,7 @@
                 l => l.Log(
                     level,
                     It.IsAny<EventId>(),
-                    It.Is<It.IsAnyType>((o, t) => o.ToString() == message),
+                    It.Is<It.IsAnyType>((o, _) => o.ToString() == message),
                     null,
                     It.IsAny<Func<It.IsAnyType, Exception, string>>()),
                 times,

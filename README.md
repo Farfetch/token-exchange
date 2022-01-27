@@ -19,7 +19,6 @@ Currently, only a partial implementation of the RFC is available with focus on t
 #### <i></i> Extensions to the RFC
 - `client_act` claim: The prefix `client_` is added to the `act` claim in the response when a delegation is performed and the subject token only contains client details and no subject. This prefix is only added if your IdentityServer is configured to add the prefix "client_" to the Client claim. 
 
-
 ## Usage
 -------------
 
@@ -79,8 +78,8 @@ dotnet test
 Built with
 -------------
 
-- [Dotnet Core](https://dotnet.microsoft.com/download#/current) 
-- [Duende Identity Server](https://github.com/DuendeSoftware/IdentityServer)
+-  [Dotnet Core](https://dotnet.microsoft.com/download#/current) 
+-  [Duende Identity Server](https://github.com/DuendeSoftware/IdentityServer)
 
 Restrictions and Cautions
 -------------
