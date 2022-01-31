@@ -1,9 +1,10 @@
-﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Interfaces
+﻿namespace IdentityServer.Contrib.TokenExchange.Interfaces
 {
     using System.Threading.Tasks;
 
-    using Duende.IdentityServer.Contrib.TokenExchange.Models;
     using Duende.IdentityServer.Validation;
+
+    using IdentityServer.Contrib.TokenExchange.Models;
 
     public interface ITokenExchangeRequestValidator
     {

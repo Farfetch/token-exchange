@@ -1,4 +1,4 @@
-﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Models
+﻿namespace IdentityServer.Contrib.TokenExchange.Models
 {
     using Duende.IdentityServer.Models;
     using Duende.IdentityServer.Validation;

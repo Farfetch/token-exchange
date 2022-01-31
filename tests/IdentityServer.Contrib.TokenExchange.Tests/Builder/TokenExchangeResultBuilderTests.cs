@@ -1,20 +1,21 @@
-namespace Duende.IdentityServer.Contrib.TokenExchange.Tests.Builder
+namespace IdentityServer.Contrib.TokenExchange.Tests.Builder
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Security.Claims;
 
-    using IdentityModel;
-
-    using Duende.IdentityServer.Contrib.TokenExchange.Builders;
-    using Duende.IdentityServer.Contrib.TokenExchange.Config;
-    using Duende.IdentityServer.Contrib.TokenExchange.Constants;
-    using Duende.IdentityServer.Contrib.TokenExchange.Extensions;
-    using Duende.IdentityServer.Contrib.TokenExchange.Tests.Extensions;
     using Duende.IdentityServer.Extensions;
     using Duende.IdentityServer.Models;
     using Duende.IdentityServer.Validation;
+
+    using IdentityModel;
+
+    using IdentityServer.Contrib.TokenExchange.Builders;
+    using IdentityServer.Contrib.TokenExchange.Config;
+    using IdentityServer.Contrib.TokenExchange.Constants;
+    using IdentityServer.Contrib.TokenExchange.Extensions;
+    using IdentityServer.Contrib.TokenExchange.Tests.Extensions;
 
     using Microsoft.Extensions.Logging;
     using Microsoft.VisualStudio.TestTools.UnitTesting;

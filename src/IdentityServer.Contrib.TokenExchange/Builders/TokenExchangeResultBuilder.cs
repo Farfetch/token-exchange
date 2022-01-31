@@ -1,19 +1,21 @@
-﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Builders
+﻿namespace IdentityServer.Contrib.TokenExchange.Builders
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Security.Claims;
 
-    using IdentityModel;
-
-    using Duende.IdentityServer.Contrib.TokenExchange.Config;
-    using Duende.IdentityServer.Contrib.TokenExchange.Constants;
-    using Duende.IdentityServer.Contrib.TokenExchange.Extensions;
-    using Duende.IdentityServer.Contrib.TokenExchange.Interfaces;
-    using Duende.IdentityServer.Contrib.TokenExchange.Models;
+    using Duende.IdentityServer;
     using Duende.IdentityServer.Models;
     using Duende.IdentityServer.Validation;
+
+    using IdentityModel;
+
+    using IdentityServer.Contrib.TokenExchange.Config;
+    using IdentityServer.Contrib.TokenExchange.Constants;
+    using IdentityServer.Contrib.TokenExchange.Extensions;
+    using IdentityServer.Contrib.TokenExchange.Interfaces;
+    using IdentityServer.Contrib.TokenExchange.Models;
 
     using Microsoft.Extensions.Logging;
 

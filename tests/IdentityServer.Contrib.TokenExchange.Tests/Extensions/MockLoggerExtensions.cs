@@ -1,4 +1,4 @@
-﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Tests.Extensions
+﻿namespace IdentityServer.Contrib.TokenExchange.Tests.Extensions
 {
     using System;
 
