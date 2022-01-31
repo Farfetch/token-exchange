@@ -33,7 +33,7 @@ For you to able to start using the Token Exchange framework, you first need to i
 You can do it via NuGet Package Manager via the interface or the console.
 
 ```
-PM> Install-Package Duende.IdentityServer.Contrib.TokenExchange
+PM> Install-Package IdentityServer.Contrib.TokenExchange
 ```
 
 #### <i></i> Configuration
@@ -65,7 +65,7 @@ To build a package of Token Exchange framework locally, you can use the followin
 dotnet build
 dotnet pack
 ```
-After the execution of the commands above a new package will be created at `src\Duende.IdentityServer.Contrib.TokenExchange\bin\Debug\Duende.IdentityServer.Contrib.TokenExchange.1.0.0.nupkg`
+After the execution of the commands above a new package will be created at `src\IdentityServer.Contrib.TokenExchange\bin\Debug\IdentityServer.Contrib.TokenExchange.2.0.0.nupkg`
 
 #### Testing locally
 

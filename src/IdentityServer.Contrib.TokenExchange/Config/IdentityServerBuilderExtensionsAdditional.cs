@@ -1,11 +1,12 @@
 ﻿namespace Microsoft.Extensions.DependencyInjection
 {
-    using Duende.IdentityServer.Contrib.TokenExchange;
-    using Duende.IdentityServer.Contrib.TokenExchange.Builders;
-    using Duende.IdentityServer.Contrib.TokenExchange.Config;
-    using Duende.IdentityServer.Contrib.TokenExchange.Interfaces;
-    using Duende.IdentityServer.Contrib.TokenExchange.Validators;
     using Duende.IdentityServer.Validation;
+
+    using IdentityServer.Contrib.TokenExchange;
+    using IdentityServer.Contrib.TokenExchange.Builders;
+    using IdentityServer.Contrib.TokenExchange.Config;
+    using IdentityServer.Contrib.TokenExchange.Interfaces;
+    using IdentityServer.Contrib.TokenExchange.Validators;
 
     public static class TokenExchangeDependencyInjectionExtensions
     {

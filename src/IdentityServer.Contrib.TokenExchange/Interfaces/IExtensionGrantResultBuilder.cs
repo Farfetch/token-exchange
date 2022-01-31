@@ -1,8 +1,9 @@
-﻿namespace Duende.IdentityServer.Contrib.TokenExchange.Interfaces
+﻿namespace IdentityServer.Contrib.TokenExchange.Interfaces
 {
-    using Duende.IdentityServer.Contrib.TokenExchange.Models;
     using Duende.IdentityServer.Models;
     using Duende.IdentityServer.Validation;
+
+    using IdentityServer.Contrib.TokenExchange.Models;
 
     public interface IExtensionGrantResultBuilder
     {
