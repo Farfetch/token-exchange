@@ -1,4 +1,4 @@
-﻿namespace IdentityServer.Contrib.TokenExchange.Constants
+﻿namespace Farfetch.IdentityServer.Contrib.TokenExchange.Constants
 {
     public static class TokenExchangeConstants
     {

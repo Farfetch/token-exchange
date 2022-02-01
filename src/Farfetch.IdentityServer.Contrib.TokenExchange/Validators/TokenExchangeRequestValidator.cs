@@ -1,19 +1,19 @@
-﻿namespace IdentityServer.Contrib.TokenExchange.Validators
+﻿namespace Farfetch.IdentityServer.Contrib.TokenExchange.Validators
 {
     using System.Linq;
     using System.Threading.Tasks;
 
     using Duende.IdentityServer.Validation;
 
-    using IdentityModel;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Config;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Interfaces;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Models;
 
-    using IdentityServer.Contrib.TokenExchange.Config;
-    using IdentityServer.Contrib.TokenExchange.Interfaces;
-    using IdentityServer.Contrib.TokenExchange.Models;
+    using IdentityModel;
 
     using Microsoft.Extensions.Logging;
 
-    using static IdentityServer.Contrib.TokenExchange.Constants.TokenExchangeConstants;
+    using static Farfetch.IdentityServer.Contrib.TokenExchange.Constants.TokenExchangeConstants;
 
     public class TokenExchangeRequestValidator : ITokenExchangeRequestValidator
     {

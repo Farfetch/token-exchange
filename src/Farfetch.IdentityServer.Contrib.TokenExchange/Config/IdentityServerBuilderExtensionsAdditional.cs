@@ -2,11 +2,11 @@
 {
     using Duende.IdentityServer.Validation;
 
-    using IdentityServer.Contrib.TokenExchange;
-    using IdentityServer.Contrib.TokenExchange.Builders;
-    using IdentityServer.Contrib.TokenExchange.Config;
-    using IdentityServer.Contrib.TokenExchange.Interfaces;
-    using IdentityServer.Contrib.TokenExchange.Validators;
+    using Farfetch.IdentityServer.Contrib.TokenExchange;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Builders;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Config;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Interfaces;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Validators;
 
     public static class TokenExchangeDependencyInjectionExtensions
     {

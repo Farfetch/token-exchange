@@ -1,4 +1,4 @@
-namespace IdentityServer.Contrib.TokenExchange.Tests.Builder
+namespace Farfetch.IdentityServer.Contrib.TokenExchange.Tests.Builder
 {
     using System;
     using System.Collections.Generic;
@@ -9,13 +9,13 @@ namespace IdentityServer.Contrib.TokenExchange.Tests.Builder
     using Duende.IdentityServer.Models;
     using Duende.IdentityServer.Validation;
 
-    using IdentityModel;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Builders;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Config;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Constants;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Extensions;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Tests.Extensions;
 
-    using IdentityServer.Contrib.TokenExchange.Builders;
-    using IdentityServer.Contrib.TokenExchange.Config;
-    using IdentityServer.Contrib.TokenExchange.Constants;
-    using IdentityServer.Contrib.TokenExchange.Extensions;
-    using IdentityServer.Contrib.TokenExchange.Tests.Extensions;
+    using IdentityModel;
 
     using Microsoft.Extensions.Logging;
     using Microsoft.VisualStudio.TestTools.UnitTesting;

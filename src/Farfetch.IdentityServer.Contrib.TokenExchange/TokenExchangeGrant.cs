@@ -1,11 +1,11 @@
-﻿namespace IdentityServer.Contrib.TokenExchange
+﻿namespace Farfetch.IdentityServer.Contrib.TokenExchange
 {
     using System.Threading.Tasks;
 
     using Duende.IdentityServer.Validation;
 
-    using IdentityServer.Contrib.TokenExchange.Constants;
-    using IdentityServer.Contrib.TokenExchange.Interfaces;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Constants;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Interfaces;
 
     public class TokenExchangeGrant : IExtensionGrantValidator
     {

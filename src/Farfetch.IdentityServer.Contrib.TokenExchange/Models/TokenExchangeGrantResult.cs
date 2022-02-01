@@ -1,4 +1,4 @@
-﻿namespace IdentityServer.Contrib.TokenExchange.Models
+﻿namespace Farfetch.IdentityServer.Contrib.TokenExchange.Models
 {
     using System.Collections.Generic;
     using System.Security.Claims;
@@ -6,7 +6,7 @@
     using Duende.IdentityServer.Models;
     using Duende.IdentityServer.Validation;
 
-    using IdentityServer.Contrib.TokenExchange.Constants;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Constants;
 
     public class TokenExchangeGrantResult : GrantValidationResult
     {
