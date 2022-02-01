@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <AssemblyName>IdentityServer.Contrib.TokenExchange</AssemblyName>
-    <RootNamespace>IdentityServer.Contrib.TokenExchange</RootNamespace>
-    <PackageId>IdentityServer.Contrib.TokenExchange</PackageId>
+    <AssemblyName>Farfetch.IdentityServer.Contrib.TokenExchange</AssemblyName>
+    <RootNamespace>Farfetch.IdentityServer.Contrib.TokenExchange</RootNamespace>
+    <PackageId>Farfetch.IdentityServer.Contrib.TokenExchange</PackageId>
     <Authors>Farfetch</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>Extends Duende Identity Server capabilities by implementing support for Token Exchange following the specifications defined in the RFC 8693 - OAuth 2.0 Token Exchange - https://www.rfc-editor.org/rfc/rfc8693.html.</Description>

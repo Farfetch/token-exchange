@@ -1,9 +1,9 @@
-﻿namespace IdentityServer.Contrib.TokenExchange.Interfaces
+﻿namespace Farfetch.IdentityServer.Contrib.TokenExchange.Interfaces
 {
     using Duende.IdentityServer.Models;
     using Duende.IdentityServer.Validation;
 
-    using IdentityServer.Contrib.TokenExchange.Models;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Models;
 
     public interface IExtensionGrantResultBuilder
     {

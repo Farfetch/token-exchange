@@ -1,10 +1,10 @@
-﻿namespace IdentityServer.Contrib.TokenExchange.Interfaces
+﻿namespace Farfetch.IdentityServer.Contrib.TokenExchange.Interfaces
 {
     using System.Threading.Tasks;
 
     using Duende.IdentityServer.Validation;
 
-    using IdentityServer.Contrib.TokenExchange.Models;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Models;
 
     public interface ITokenExchangeRequestValidator
     {

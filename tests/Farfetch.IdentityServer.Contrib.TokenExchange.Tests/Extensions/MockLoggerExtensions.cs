@@ -1,4 +1,4 @@
-﻿namespace IdentityServer.Contrib.TokenExchange.Tests.Extensions
+﻿namespace Farfetch.IdentityServer.Contrib.TokenExchange.Tests.Extensions
 {
     using System;
 

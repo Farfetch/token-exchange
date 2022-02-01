@@ -1,10 +1,10 @@
-﻿namespace IdentityServer.Contrib.TokenExchange.Config
+﻿namespace Farfetch.IdentityServer.Contrib.TokenExchange.Config
 {
     using System.Collections.Generic;
 
-    using IdentityModel;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Constants;
 
-    using IdentityServer.Contrib.TokenExchange.Constants;
+    using IdentityModel;
 
     public class TokenExchangeOptions
     {

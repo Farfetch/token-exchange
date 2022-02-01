@@ -1,12 +1,12 @@
-﻿namespace IdentityServer.Contrib.TokenExchange.Extensions
+﻿namespace Farfetch.IdentityServer.Contrib.TokenExchange.Extensions
 {
     using System.Collections.Generic;
     using System.Linq;
     using System.Security.Claims;
 
-    using IdentityModel;
+    using Farfetch.IdentityServer.Contrib.TokenExchange.Constants;
 
-    using IdentityServer.Contrib.TokenExchange.Constants;
+    using IdentityModel;
 
     public static class ClaimsExtensions
     {

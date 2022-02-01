@@ -1,4 +1,4 @@
-﻿namespace IdentityServer.Contrib.TokenExchange.Models
+﻿namespace Farfetch.IdentityServer.Contrib.TokenExchange.Models
 {
     using Duende.IdentityServer.Models;
     using Duende.IdentityServer.Validation;

@@ -17,13 +17,13 @@ jobs:
         dotnet-version: '6.0.x'
 
     - name: Install dependencies
-      run: dotnet restore ./IdentityServer.Contrib.TokenExchange.sln
+      run: dotnet restore ./Farfetch.IdentityServer.Contrib.TokenExchange.sln
     
     - name: Test
-      run: dotnet test tests/IdentityServer.Contrib.TokenExchange.Tests/IdentityServer.Contrib.TokenExchange.Tests.csproj -c Release --no-restore --verbosity normal
+      run: dotnet test tests/Farfetch.IdentityServer.Contrib.TokenExchange.Tests/Farfetch.IdentityServer.Contrib.TokenExchange.Tests.csproj -c Release --no-restore --verbosity normal
 
     - name: Pack
-      run: dotnet pack ./IdentityServer.Contrib.TokenExchange.sln -c Release /p:Version=${{ github.event.release.tag_name }} -o ./drop
+      run: dotnet pack ./Farfetch.IdentityServer.Contrib.TokenExchange.sln -c Release /p:Version=${{ github.event.release.tag_name }} -o ./drop
 
     - name: Publish
       run: dotnet nuget push */*.nupkg -k ${{ secrets.NUGET_PUBLISH_KEY }} -s https://api.nuget.org/v3/index.json

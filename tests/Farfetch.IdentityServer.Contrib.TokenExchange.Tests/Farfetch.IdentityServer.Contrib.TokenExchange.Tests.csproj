@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\IdentityServer.Contrib.TokenExchange\IdentityServer.Contrib.TokenExchange.csproj" />
+    <ProjectReference Include="..\..\src\Farfetch.IdentityServer.Contrib.TokenExchange\Farfetch.IdentityServer.Contrib.TokenExchange.csproj" />
   </ItemGroup>
 
   <ItemGroup>
