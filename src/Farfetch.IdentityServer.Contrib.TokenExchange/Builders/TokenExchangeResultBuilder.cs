@@ -6,6 +6,7 @@
     using System.Security.Claims;
 
     using Duende.IdentityServer;
+    using Duende.IdentityServer.Extensions;
     using Duende.IdentityServer.Models;
     using Duende.IdentityServer.Validation;
 
@@ -16,6 +17,8 @@
     using Farfetch.IdentityServer.Contrib.TokenExchange.Models;
 
     using IdentityModel;
+
+    using IdentityServer4.Contrib.TokenExchange.Models;
 
     using Microsoft.Extensions.Logging;
 
@@ -131,10 +134,23 @@
 
         private Claim BuildActClaim(IEnumerable<string> claimTypesToInclude)
         {
-            var act = new Dictionary<string, object>
+            var act = new Dictionary<string, object>();
+
+            var existingActClaim = this.subjectUserClaims.Act();
+
+            var lastClientId = string.Empty;
+
+            if (!existingActClaim.IsNullOrEmpty())
             {
-                { JwtClaimTypes.ClientId, this.actorClient.ClientId },
-            };
+                var actClaimObject = JsonConvert.DeserializeObject<ActClaim>(existingActClaim, this.jsonSettings);
+
+                lastClientId = actClaimObject.LastClientId;
+            }
+
+            if (existingActClaim.IsNullOrEmpty() || this.actorClient.ClientId != lastClientId)
+            {
+                act.Add(JwtClaimTypes.ClientId, this.actorClient.ClientId);
+            }
 
             foreach (var claimType in claimTypesToInclude)
             {
@@ -145,8 +161,7 @@
                 }
             }
 
-            var existingActClaim = this.subjectUserClaims.Act();
-            if (!string.IsNullOrEmpty(existingActClaim))
+            if (!string.IsNullOrEmpty(existingActClaim) && this.actorClient.ClientId != lastClientId)
             {
                 this.subjectUserClaims.Remove(this.subjectUserClaims.FirstOrDefault(c => TokenExchangeConstants.ClaimTypes.Act.Equals(c.Type)));
                 act.Add(TokenExchangeConstants.ClaimTypes.Act, JsonConvert.DeserializeObject(existingActClaim, this.jsonSettings));
