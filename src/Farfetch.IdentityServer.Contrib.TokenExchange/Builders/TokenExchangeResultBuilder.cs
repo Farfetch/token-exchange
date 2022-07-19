@@ -134,7 +134,10 @@
 
         private Claim BuildActClaim(IEnumerable<string> claimTypesToInclude)
         {
-            var act = new Dictionary<string, object>();
+            var act = new Dictionary<string, object>
+            {
+                { JwtClaimTypes.ClientId, this.actorClient.ClientId },
+            };
 
             var existingActClaim = this.subjectUserClaims.Act();
 
@@ -147,11 +150,6 @@
                 lastClientId = actClaimObject.LastClientId;
             }
 
-            if (existingActClaim.IsNullOrEmpty() || this.actorClient.ClientId != lastClientId)
-            {
-                act.Add(JwtClaimTypes.ClientId, this.actorClient.ClientId);
-            }
-
             foreach (var claimType in claimTypesToInclude)
             {
                 var claim = this.actorUserClaims.SingleOrDefault(c => claimType.Equals(c.Type));
@@ -161,10 +159,14 @@
                 }
             }
 
-            if (!string.IsNullOrEmpty(existingActClaim) && this.actorClient.ClientId != lastClientId)
+            if (!string.IsNullOrEmpty(existingActClaim))
             {
                 this.subjectUserClaims.Remove(this.subjectUserClaims.FirstOrDefault(c => TokenExchangeConstants.ClaimTypes.Act.Equals(c.Type)));
-                act.Add(TokenExchangeConstants.ClaimTypes.Act, JsonConvert.DeserializeObject(existingActClaim, this.jsonSettings));
+                if (this.actorClient.ClientId != lastClientId)
+                {
+                    act.Add(TokenExchangeConstants.ClaimTypes.Act,
+                        JsonConvert.DeserializeObject(existingActClaim, this.jsonSettings));
+                }
             }
 
             var existingClientActClaim = this.subjectUserClaims.ClientAct();
