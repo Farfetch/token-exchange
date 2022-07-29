@@ -37,7 +37,7 @@
 
         private static string GetValue(this IEnumerable<Claim> claims, string type)
         {
-            var claim = claims?.SingleOrDefault(x => x.Type == type);
+            var claim = claims?.FirstOrDefault(x => x.Type == type);
 
             return claim?.Value;
         }
