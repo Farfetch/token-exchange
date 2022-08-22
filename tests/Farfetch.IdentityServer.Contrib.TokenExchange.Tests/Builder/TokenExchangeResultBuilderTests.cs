@@ -107,7 +107,7 @@ namespace Farfetch.IdentityServer.Contrib.TokenExchange.Tests.Builder
         public void Build_ValidSubject_SuccessResultMapsNewActClaim()
         {
             // Arrange
-            var expectedActClaim = "{\"client_id\":\"client_id_from_actor\",\"sub\":\"aClientSub\",\"tenantId\":\"2\",\"aCustomClaimToMap\":\"aCustomClaimValueToMap\"}";
+            var expectedActClaim = "{\"sub\":\"aClientSub\",\"tenantId\":\"2\",\"aCustomClaimToMap\":\"aCustomClaimValueToMap\",\"client_id\":\"client_id_from_actor\"}";
 
             var options = new TokenExchangeOptions
             {
@@ -143,18 +143,25 @@ namespace Farfetch.IdentityServer.Contrib.TokenExchange.Tests.Builder
         }
 
         [TestMethod]
-        public void Build_ValidSubject_SuccessResultMapsExistingActClaim()
+        [DataRow(
+            TestConstants.SubjectActClaim,
+            TestConstants.ExpectedActClaim
+        )]
+        [DataRow(
+            TestConstants.SubjectActClaimWithSameClientIdAtLast,
+            TestConstants.ExpectedActClaim
+        )]
+        public void Build_ValidSubject_SuccessResultExistingActClaim(string subjectActClaim, string expectedActClaim)
         {
             // Arrange
             var target = new TokenExchangeResultBuilder(this.loggerMock.Object, new TokenExchangeOptions());
-            var expectedActClaim = "{\"client_id\":\"client_id_from_actor\",\"sub\":\"subActor\",\"tenantId\":\"1\",\"act\":{\"client_id\":\"api1\"}}";
 
             var actorTokenValidationResult = SuccessActorTokenValidationResult();
             var subjectTokenValidationResult = SuccessSubjectTokenValidationResult();
             var subjectClaims = new List<Claim>
             {
                 new Claim(JwtClaimTypes.Subject, "testSubject"),
-                new Claim(TokenExchangeConstants.ClaimTypes.Act, "{\"client_id\":\"api1\"}")
+                new Claim(TokenExchangeConstants.ClaimTypes.Act, subjectActClaim)
             };
             subjectTokenValidationResult.Claims = subjectClaims;
 
@@ -168,6 +175,7 @@ namespace Farfetch.IdentityServer.Contrib.TokenExchange.Tests.Builder
             Assert.IsFalse(result.IsError);
             var actClaim = result.Subject.Claims.SingleOrDefault(c => c.Type.Equals(TokenExchangeConstants.ClaimTypes.Act));
             Assert.IsNotNull(actClaim);
+            Assert.IsFalse(actClaim.Value.Contains($"\"{TokenExchangeConstants.ClaimTypes.ClientAct}\""));
             Assert.AreEqual(expectedActClaim, actClaim.Value);
         }
 
@@ -176,7 +184,7 @@ namespace Farfetch.IdentityServer.Contrib.TokenExchange.Tests.Builder
         {
             // Arrange
             var target = new TokenExchangeResultBuilder(this.loggerMock.Object, new TokenExchangeOptions());
-            var expectedActClaim = "{\"client_id\":\"client_id_from_actor\",\"tenantId\":\"1\"}";
+            var expectedActClaim = "{\"tenantId\":\"1\",\"client_id\":\"client_id_from_actor\"}";
 
             var actorTokenValidationResult = new TokenValidationResult
             {
@@ -215,11 +223,18 @@ namespace Farfetch.IdentityServer.Contrib.TokenExchange.Tests.Builder
         }
 
         [TestMethod]
-        public void Build_NoSubject_SuccessResultMapsExistingActClaimToClient()
+        [DataRow(
+            TestConstants.SubjectClientActClaim,
+            TestConstants.ExpectedClientActClaim
+        )]
+        [DataRow(
+            TestConstants.SubjectClientActClaimWithSameClientIdAtLast,
+            TestConstants.ExpectedClientActClaim
+        )]
+        public void Build_NoSubject_SuccessResultExistingClientActClaim(string subjectClientActClaim, string expectedActClaim)
         {
             // Arrange
             var target = new TokenExchangeResultBuilder(this.loggerMock.Object, new TokenExchangeOptions());
-            var expectedActClaim = "{\"client_id\":\"client_id_from_actor\",\"tenantId\":\"1\",\"client_act\":{\"client_id\":\"api2\",\"client_act\":{\"client_id\":\"api1\"}}}";
 
             var actorTokenValidationResult = new TokenValidationResult
             {
@@ -239,7 +254,7 @@ namespace Farfetch.IdentityServer.Contrib.TokenExchange.Tests.Builder
                 Claims = new List<Claim>
                 {
                     new Claim("tenantId", "2"),
-                    new Claim(TokenExchangeConstants.ClaimTypes.ClientAct, "{\"client_id\":\"api2\",\"client_act\":{\"client_id\":\"api1\"}}"),
+                    new Claim(TokenExchangeConstants.ClaimTypes.ClientAct, subjectClientActClaim),
                 }
             };
 
@@ -255,6 +270,7 @@ namespace Farfetch.IdentityServer.Contrib.TokenExchange.Tests.Builder
             Assert.AreEqual(subjectTokenValidationResult.Client.ClientId, result.Client.ClientId);
             var actClaim = result.Client.Claims.SingleOrDefault(c => c.Type.Equals(TokenExchangeConstants.ClaimTypes.Act));
             Assert.IsNotNull(actClaim);
+            Assert.IsFalse(actClaim.Value.Contains($"\"{TokenExchangeConstants.ClaimTypes.Act}\""));
             Assert.AreEqual(expectedActClaim, actClaim.Value);
         }
 
