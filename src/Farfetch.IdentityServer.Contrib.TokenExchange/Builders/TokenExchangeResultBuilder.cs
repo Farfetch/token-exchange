@@ -233,10 +233,8 @@
 
             var actClaim = JsonConvert.DeserializeObject<ActClaim>(data, this.jsonSettings);
 
-            var isLastId = !string.IsNullOrEmpty(actClaim?.ClientId) &&
+            return !string.IsNullOrEmpty(actClaim?.ClientId) &&
                            actClaim.ClientId.Equals(this.actorClient.ClientId);
-
-            return isLastId;
         }
 
         private JObject GetFromExistingClaim(string claimType, string claims)
