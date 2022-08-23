@@ -5,6 +5,6 @@
     public class ActClaim
     {
         [JsonProperty(PropertyName = "client_id")]
-        public string LastClientId { get; set; }
+        public string ClientId { get; set; }
     }
 }
