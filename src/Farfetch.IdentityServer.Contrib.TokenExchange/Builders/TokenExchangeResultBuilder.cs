@@ -161,9 +161,9 @@
             act.TryAddNonEmptyJObject(TokenExchangeConstants.ClaimTypes.Act, GetFromExistingClaim(TokenExchangeConstants.ClaimTypes.Act, this.subjectUserClaims.Act()));
 
             var newAct = new Claim(
-                TokenExchangeConstants.ClaimTypes.Act,
-                JsonConvert.SerializeObject(act, this.jsonSettings),
-                IdentityServerConstants.ClaimValueTypes.Json
+                        TokenExchangeConstants.ClaimTypes.Act,
+                        JsonConvert.SerializeObject(act, this.jsonSettings),
+                        IdentityServerConstants.ClaimValueTypes.Json
                 );
 
             this.subjectUserClaims.Add(newAct);
