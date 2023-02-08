@@ -1,3 +1,10 @@
+**This project is no longer being actively maintained.** 
+
+FARFETCH has decided to archive this project. As an alternative, you can find an example in [Duende documentation](https://docs.duendesoftware.com/identityserver/v5/tokens/extension_grants/token_exchange/).
+
+We won't be accepting pull requests or responding to issues for this project anymore. Thank you for your understanding.
+
+
 ![Build Master](https://github.com/Farfetch/Token-Exchange/workflows/Build%20Master/badge.svg?branch=master)
 
 # Token Exchange
